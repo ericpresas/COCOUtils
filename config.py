@@ -11,13 +11,13 @@ REDUCED_DATASET_PARAMS = {
 
 # Configuration Pascal -> COCO conversor
 
-IMAGES_PATH = "/Dades/ubuntuold/UPC/TFM/datasets/grapes_dataset/0"
-ANNOTATIONS_PATH = "/Dades/ubuntuold/UPC/TFM/datasets/grapes_dataset/0"
-OUTPUT_COVERSION_PATH = "/Dades/ubuntuold/UPC/TFM/CustomCOCO/resources/pascal_to_coco.json"
+IMAGES_PATH = "/datasets/trainset"
+ANNOTATIONS_PATH = "/datasets/trainset"
+OUTPUT_COVERSION_PATH = "resources/pascal_to_coco.json"
 
 # Configuration Grapes dataset
 
 GRAPES_DATASET = {
-    "path": "/Dades/ubuntuold/UPC/TFM/datasets/grapes_dataset",
-    "output_ann_path": "/Dades/ubuntuold/UPC/TFM/CustomCOCO/resources"
+    "path": "/datasets/grapes_dataset",
+    "output_ann_path": "/datasets/grapes_annotations"
 }

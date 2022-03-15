@@ -58,8 +58,10 @@ class PascalToCOCO(object):
         width = int(size.findtext('width'))
         height = int(size.findtext('height'))
 
+        composed_filename = f"{self.annotator}/{filename}" if self.annotator is not None else filename
+
         image_info = {
-            'file_name': filename,
+            'file_name': composed_filename,
             'path': f"{self.images_path}/{filename}",
             'height': height,
             'width': width,

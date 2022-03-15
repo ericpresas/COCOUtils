@@ -69,7 +69,8 @@ def main():
 
     directories.sort()
     last_annotation = 0
-    for i, directory in enumerate(directories):
+    for directory in directories:
+        i = int(directory.split('/')[-1])
         pascal_to_coco = PascalToCOCO(
             images_path=directory,
             annotations_path=directory,
@@ -93,7 +94,8 @@ def main():
 
     ann_imgs_ids_no_anns = {}
     all_coco_tools_no_anns = {}
-    for i, directory in enumerate(directories):
+    for directory in directories:
+        i = int(directory.split('/')[-1])
         coco_tools = utils.load_ann_file(path=f"{config.GRAPES_DATASET['output_ann_path']}/grapes_anns_{i}.json")
         if i in valid_anns:
             all_coco_tools[i] = coco_tools
@@ -108,7 +110,8 @@ def main():
         "test": 0.1
     }
     img_ids_all = list(set.intersection(*map(set, [items for key, items in ann_imgs_ids.items()])))
-    for i, directory in enumerate(directories):
+    for directory in directories:
+        i = int(directory.split('/')[-1])
         if i in valid_anns:
             if i != 0:
                 ann_imgs_ids[i] = list(set(ann_imgs_ids[i]) - set(img_ids_all))
